@@ -1,0 +1,73 @@
+<div class="root">
+    <div class="navbar has-background-dark">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <div class="app-name has-gradient-text">
+                    Kanban
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="board">
+        <div class="board-bar">
+            <p class="board-name">
+                Board
+            </p>
+        </div>
+        <div class="board-wrapper">
+            <div class="board-columns">
+                <div class="board-column"
+                cdkDropList
+                    #todoList="cdkDropList"
+                    [cdkDropListData]="todo"
+                    [cdkDropListConnectedTo]="[doneList]"
+                    (cdkDropListDropped)="drop($event)"
+                >
+                    <div class="column-title">
+                        Idées
+                    </div>
+                    <div class="task-container">
+                       <div class="task" cdkDrag>
+                            C'est quelque chose que je veux faire !
+                        </div> 
+<div class="task">
+                            C'est quelque chose que je veux faire !
+                        </div> 
+<div class="task">
+                            C'est quelque chose que je veux faire !
+                        </div> 
+<div class="task">
+                            C'est quelque chose que je veux faire !
+                        </div> 
+                    </div>
+                </div> 
+                <div class="board-column">
+                    <div class="column-title" cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">>
+                        A faire
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title">
+                        Fini !
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title">
+                        Fini !
+                    </div>
+                </div>
+                <div class="board-column">
+                    <div class="column-title">
+                        Fini !
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
